@@ -1,0 +1,453 @@
+/*  pre loading animation */
+
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript, 
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  padding-top: 15%;
+  padding-right: 10%;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background:  #e5e5e5;
+}
+
+.loader {
+  font-size: 7px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.loader:after {
+  background: #e5e5e5;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* Sidebar Style */
+
+
+ body {
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100%;
+   margin-bottom: 60px;
+ }
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    padding-bottom: 100px;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #2678ad;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+    padding: 10px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+/*    color: #999999;*/
+    color: #ecebeb;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sidebar-nav li a i{
+    font-size: 23px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 90px;
+    padding-top: 15px;
+    font-size: 18px;
+    line-height: 60px;
+    border-bottom: 0.5px solid #e5e5e5;
+
+   
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #ecebeb;
+    font-size: 16px ! important;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/* end sidebar style */
+
+/* dashboard style  */
+.dashboard-panel i{
+    font-size: 80px;
+    color: #e67e22;
+}
+
+.dashboard-panel .dashboard-panel-title {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.dashboard-wrapper .panel-footer i {
+   font-weight: 700;
+   position: block;
+   font-size: 20px;
+   vertical-align: middle;
+}
+
+.dashboard-wrapper .panel-footer p {
+    margin-bottom: 5px;
+}
+
+
+.header .title{
+    margin-bottom: 0;
+    font-weight: 400 ! important;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header .title i {
+  font-size: 30px;
+
+
+}
+
+.header .category{
+    font-weight: 300;
+    color: #95a5a6;
+    margin-bottom: 0;
+}
+
+
+.table-panel{
+    padding: 0;
+}
+
+.table thead tr > th,
+.table thead tr > td,
+.table tbody tr > th,
+.table tbody tr > td,
+.table tfoot tr > th,
+.table tfoot tr > td {
+  border-top: 1px solid #CCC5B9;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
+.table > thead > tr > th {
+  border-bottom-width: 0;
+  font-size: 1.25em;
+  color: black;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.table > tfoot > tr > th {
+  border-bottom-width: 0;
+  font-size: 1.25em;
+  color: black;
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.table .radio,
+.table .checkbox {
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding: 0;
+  width: 15px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 12px;
+  vertical-align: middle;
+}
+.table .th-description {
+  max-width: 150px;
+}
+.table .td-price {
+  font-size: 26px;
+  font-weight: 300;
+  margin-top: 5px;
+  text-align: right;
+}
+.table .td-total {
+  font-weight: 600;
+  font-size: 1.25em;
+  padding-top: 20px;
+  text-align: right;
+}
+.table .td-actions .btn.btn-sm, .table .td-actions .btn.btn-xs {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.table > tbody > tr {
+  position: relative;
+}
+
+.table-striped tbody > tr:nth-of-type(2n+1) {
+  background-color: #fff;
+}
+.table-striped tbody > tr:nth-of-type(2n) {
+  background-color: #FFFCF5;
+}
+.table-striped > thead > tr > th,
+.table-striped > tbody > tr > th,
+.table-striped > tfoot > tr > th,
+.table-striped > thead > tr > td,
+.table-striped > tbody > tr > td,
+.table-striped > tfoot > tr > td {
+  padding: 15px 8px;
+}
+
+
+.navbar-bottom {
+  position: absolute;
+ bottom: 0;
+width: 100%;
+margin: 0;
+border-radius: 0;
+background-color: #f5f5f5 ! important;
+padding-left: 300px;
+padding-right: 30px;
+}
+
+.navbar-bottom .container-fluid .navbar-header .navbar-brand{
+  color: #777 ! important;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.navbar-bottom .navbar-right li a {
+  color: #777 ! important;
+  font-weight: 400;
+}
+
+/* end dashboard style */
+
+/* custom modal style */
+.modal-footer, .modal-title{
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* end custom modal style */
+
+
+/* table datatables custom style */
+
+.table-database {
+font-size: 12px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+
+}
+
+.table-database tbody tr > td {
+  font-weight: 400;
+}
+
+div.dataTables_wrapper div.dataTables_info, 
+div.dataTables_wrapper div.dataTables_length label, 
+div.dataTables_wrapper div.dataTables_filter,
+.btn-submit-user
+ {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+}
+
+/* end table datatables custom style */
+
+/* form settings style */
+.custom_form{
+    -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+}
+
+.settings_indicator{
+  font-size: 25px;
+}
+
+.settings_table tbody tr td {
+ font-weight: 400;
+}
+
+.settings_table tbody tr td small {
+  color: #95a5a6;
+}
+
+.settings_table tbody tr td a {
+  color: #66615b;
+
+}
+
+.btn-submit {
+  border-radius: 0;
+  padding-top: 8px ! important;
+  padding-bottom: 8px ! important;
+}
+/* end for settings style */
+
+
+
+
